@@ -1,0 +1,6 @@
+{
+  "name": "알·쓸·신·안 | 안전 웹북",
+  "description": "알고보면 쓸모있는 신기한 안전 — 1편부터 10편까지 한눈에 읽는 3D 인터랙티브 안전 웹북",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

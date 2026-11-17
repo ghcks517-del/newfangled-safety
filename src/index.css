@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    --font-serif: "Noto Serif KR", Georgia, serif;
+  }
+
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: #eae5dc;
+    color: #1c1917;
+    overflow-x: hidden;
+  }
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+}
