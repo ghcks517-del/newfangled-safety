@@ -135,9 +135,6 @@ function getCoverCanvas(): HTMLCanvasElement {
 
   // Titles
   ctx.textAlign = 'center';
-  ctx.fillStyle = '#9A3412';
-  ctx.font = '600 15px "Noto Sans KR", sans-serif';
-  ctx.fillText('ILLUSTRATED SAFETY BOOK', 310, 382);
 
   ctx.fillStyle = '#151D17';
   ctx.font = '700 76px "Noto Serif KR", serif';

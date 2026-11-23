@@ -127,16 +127,6 @@ export function BookCoverPage() {
           </svg>
         </div>
 
-        <p
-          className="font-medium tracking-[0.22em] text-[#9A3412]"
-          style={{
-            fontSize: 'calc(2.5 * var(--pu))',
-            marginBottom: 'calc(2.2 * var(--pu))',
-          }}
-        >
-          ILLUSTRATED SAFETY BOOK
-        </p>
-
         <h1
           className="font-editorial font-bold tracking-[0.14em] text-[#151D17]"
           style={{ fontSize: 'calc(12.5 * var(--pu))', lineHeight: 1.15 }}

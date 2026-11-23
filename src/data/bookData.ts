@@ -105,7 +105,7 @@ export const CHAPTERS: BookChapter[] = [
 export const TOTAL_CONTENT_PAGES = CHAPTERS.reduce((sum, ch) => sum + ch.pageCount, 0);
 
 const PAGE_LABELS = ['표지', '1페이지', '2페이지', '핵심 안전기준', '작성 샘플 1', '작성 샘플 2'];
-const ASSET_VERSION = '2';
+const ASSET_VERSION = '3';
 
 export const BOOK_PAGES: BookPage[] = [
   {
