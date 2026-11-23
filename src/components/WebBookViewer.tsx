@@ -31,8 +31,8 @@ interface PanOffset {
   y: number;
 }
 
-const TOTAL_PAGES = BOOK_PAGES.length; // 42 (Cover + TOC + 40 chapter pages)
-const TOTAL_SPREADS = TOTAL_PAGES / 2; // 21
+const TOTAL_PAGES = BOOK_PAGES.length; // 44 (Cover + TOC + 42 chapter pages)
+const TOTAL_SPREADS = TOTAL_PAGES / 2; // 22
 const FLIP_DURATION_SPREAD = 920; // safety fallback slightly above 860ms CSS animation
 const FLIP_DURATION_SINGLE = 720; // safety fallback slightly above 660ms CSS animation
 const MIN_ZOOM = 1;

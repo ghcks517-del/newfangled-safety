@@ -98,11 +98,14 @@ export const CHAPTERS: BookChapter[] = [
     title: '화학물질·MSDS',
     subtitle: '화학물질, 알고 사용하시나요?',
     startPageIndex: 38,
-    pageCount: 4,
+    pageCount: 6,
   },
 ];
 
-const PAGE_LABELS = ['표지', '1페이지', '2페이지', '핵심 안전기준'];
+export const TOTAL_CONTENT_PAGES = CHAPTERS.reduce((sum, ch) => sum + ch.pageCount, 0);
+
+const PAGE_LABELS = ['표지', '1페이지', '2페이지', '핵심 안전기준', '작성 샘플 1', '작성 샘플 2'];
+const ASSET_VERSION = '2';
 
 export const BOOK_PAGES: BookPage[] = [
   {
@@ -125,13 +128,13 @@ export const BOOK_PAGES: BookPage[] = [
     Array.from({ length: chapter.pageCount }, (_, offset) => {
       const index = chapter.startPageIndex + offset;
       const pageNumber = index + 1;
-      const assetPadded = String((chapter.id - 1) * 4 + offset + 1).padStart(2, '0');
+      const assetPadded = String(index - 1).padStart(2, '0');
       return {
         index,
         pageNumber,
         kind: 'image' as const,
         chapterId: chapter.id,
-        src: `/book/page_${assetPadded}.webp`,
+        src: `/book/page_${assetPadded}.webp?v=${ASSET_VERSION}`,
         alt: `알쓸신안 ${chapter.numberLabel} ${chapter.title} - ${PAGE_LABELS[offset] ?? `${offset + 1}페이지`}`,
         label: PAGE_LABELS[offset] ?? `${offset + 1}페이지`,
       };

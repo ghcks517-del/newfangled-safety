@@ -1,4 +1,4 @@
-import { CHAPTERS, type BookChapter, type BookPage } from '../data/bookData';
+import { CHAPTERS, TOTAL_CONTENT_PAGES, type BookChapter, type BookPage } from '../data/bookData';
 
 // Uses CSS custom property --pu (1% of single page width) inherited from the book container.
 
@@ -240,7 +240,7 @@ export function BookTocPage({ onSelectChapter, interactive = true }: BookTocPage
             className="font-mono font-medium tabular-nums text-stone-500"
             style={{ fontSize: 'calc(2.3 * var(--pu))' }}
           >
-            총 10편 · 40쪽
+            총 {CHAPTERS.length}편 · {TOTAL_CONTENT_PAGES}쪽
           </span>
         </div>
       </div>
@@ -251,7 +251,7 @@ export function BookTocPage({ onSelectChapter, interactive = true }: BookTocPage
         style={{ marginBlock: 'calc(1.8 * var(--pu))' }}
       >
         {CHAPTERS.map((chapter) => {
-          const contentPageStart = (chapter.id - 1) * 4 + 1;
+          const contentPageStart = chapter.startPageIndex - 1;
           const rowInner = (
             <div
               className="flex w-full items-center justify-between"

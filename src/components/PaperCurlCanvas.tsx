@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { CHAPTERS, type BookPage } from '../data/bookData';
+import { CHAPTERS, TOTAL_CONTENT_PAGES, type BookPage } from '../data/bookData';
 
 interface PaperCurlCanvasProps {
   isSpreadMode: boolean;
@@ -216,7 +216,7 @@ function getTocCanvas(): HTMLCanvasElement {
   ctx.textAlign = 'right';
   ctx.fillStyle = '#78716C';
   ctx.font = '500 14px monospace';
-  ctx.fillText('총 10편 · 40쪽', 580, 94);
+  ctx.fillText(`총 ${CHAPTERS.length}편 · ${TOTAL_CONTENT_PAGES}쪽`, 580, 94);
   ctx.textAlign = 'left';
 
   ctx.strokeStyle = '#1C1917';
@@ -245,7 +245,7 @@ function getTocCanvas(): HTMLCanvasElement {
     ctx.textAlign = 'right';
     ctx.fillStyle = '#A8A29E';
     ctx.font = '500 13px monospace';
-    ctx.fillText(`p.${String((ch.id - 1) * 4 + 1).padStart(2, '0')}`, 576, y + 24);
+    ctx.fillText(`p.${String(ch.startPageIndex - 1).padStart(2, '0')}`, 576, y + 24);
     ctx.textAlign = 'left';
 
     if (idx < CHAPTERS.length - 1) {
